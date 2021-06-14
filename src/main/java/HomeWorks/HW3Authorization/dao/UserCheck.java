@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CheckUsername implements UserCheckDao {
+public class UserCheck implements UserDao {
     @Override
     public boolean checkLogin(String username) {
         String usernameCheck = null;
@@ -68,5 +68,24 @@ public class CheckUsername implements UserCheckDao {
             throwables.printStackTrace();
         }
         return false;
+    }
+
+    @Override
+    public String getNameOfUser(String username) {
+        String name = null;
+        Connection connection;
+        try {
+            connection = ConnectionDBMySql.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(Queries.SELECT_THE_NAME_OF_THE_USER);
+            preparedStatement.setString(1,username);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                name = resultSet.getString(1);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        ConnectionDBMySql.closeConnection();
+        return name;
     }
 }

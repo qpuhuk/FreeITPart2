@@ -1,7 +1,7 @@
 package HomeWorks.HW3Authorization;
 
-import HomeWorks.HW3Authorization.dao.UserCheckDao;
-import HomeWorks.HW3Authorization.dao.UserCheckImpl;
+import HomeWorks.HW3Authorization.dao.UserDao;
+import HomeWorks.HW3Authorization.dao.UserDaoImpl;
 import HomeWorks.HW3Authorization.service.UserService;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/reg")
@@ -22,19 +23,18 @@ public class RegistrationUser extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html");
         String login = req.getParameter("username");
         String password = req.getParameter("password");
         String name = req.getParameter("name");
-        UserCheckDao userCheckDao = new UserCheckImpl();
-        boolean result = userCheckDao.addUser(new UserService().createUser(login, password, name));
-        ServletContext context = getServletContext();
-        RequestDispatcher dispatcher;
+        HttpSession session = req.getSession();
+        session.setAttribute("login",login);
+        session.setAttribute("name", name);
+        UserDao userDao = new UserDaoImpl();
+        boolean result = userDao.addUser(new UserService().createUser(login, password, name));
         if (result) {
-            dispatcher = context.getRequestDispatcher("/pageHello.jsp");
+            getServletContext().getRequestDispatcher("/pageHello.jsp").forward(req,resp);
         } else {
-            dispatcher = context.getRequestDispatcher("/registrationFix.html");
+            getServletContext().getRequestDispatcher("/registrationFix.html").forward(req,resp);
         }
-        dispatcher.forward(req, resp);
     }
 }
