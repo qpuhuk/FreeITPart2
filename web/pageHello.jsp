@@ -9,7 +9,7 @@
 <body>
 <h1><%= "Hello, " + session.getAttribute("name") %>
 </h1>
-<form action="index.html" method="Post">
+<form action="index.html">
 <input type="submit" value="Logout"/>
     <%session.invalidate();%>
 </form>

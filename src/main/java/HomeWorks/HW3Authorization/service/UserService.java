@@ -2,14 +2,14 @@ package HomeWorks.HW3Authorization.service;
 
 import HomeWorks.HW3Authorization.entity.User;
 
-public class UserService {
+import javax.servlet.http.HttpServletRequest;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-    public User createUser(String login, String pass, String name) {
+public interface UserService {
 
-        User user = new User();
-        user.setUsername(login);
-        user.setPassword(pass);
-        user.setName(name);
-        return user;
-    }
+    User createUserFromBD(String username) throws SQLException;
+
+    boolean addUserInDB(String username, String pass, String name);
+
 }
