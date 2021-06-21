@@ -1,6 +1,6 @@
-package HomeWorks.HW4.dao;
+package HomeWorks.HW4.example1.dao;
 
-import HomeWorks.HW4.dao.entities.PersonEntity;
+import HomeWorks.HW4.example1.dao.entities.PersonEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
 .idea
 target
-pom.xml
+
 *.iml
 src/test
-*.properties
+
