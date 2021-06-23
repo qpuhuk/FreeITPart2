@@ -1,15 +1,16 @@
 package HomeWorks.HW3Authorization.connection;
 
+import lombok.SneakyThrows;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class ConnectionDBMySql {
-
-    public static Connection getConnection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/checkLogin";
-        String user = "root";
-        String password = "Boybot007!";
-        return DriverManager.getConnection(url, user, password);
+    private static final String URL = "jdbc:mysql://localhost:3306/checkLogin";
+    private static final String USER = "root";
+    private static final String PASSWORD = "Boybot007!";
+    @SneakyThrows
+    public static Connection getConnection() {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 }

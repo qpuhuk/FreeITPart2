@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class UserDaoImpl implements UserDao {
 
     @Override
-    public User createUser(String username) {
+    public User getByName(String username) throws SQLException {
         try (Connection connection = ConnectionDBMySql.getConnection();
              PreparedStatement statement = connection.prepareStatement(Queries.CHECK_THE_USERNAME)) {
             statement.setString(1, username);
@@ -24,23 +24,18 @@ public class UserDaoImpl implements UserDao {
                 user.setName(result.getString("name"));
                 return user;
             }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
         }
         return null;
     }
 
     @Override
-    public boolean addUser(User user) {
+    public boolean create(User user) throws SQLException {
         try (Connection connection = ConnectionDBMySql.getConnection();
              PreparedStatement statement = connection.prepareStatement(Queries.ADD_NEW_USER)) {
             statement.setString(1, user.getUsername());
             statement.setString(2, user.getPassword());
             statement.setString(3, user.getName());
             return statement.executeUpdate() == 1;
-        } catch (SQLException ex) {
-            ex.printStackTrace();
         }
-        return false;
     }
 }

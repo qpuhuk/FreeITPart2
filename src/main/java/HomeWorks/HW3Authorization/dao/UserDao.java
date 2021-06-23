@@ -2,8 +2,10 @@ package HomeWorks.HW3Authorization.dao;
 
 import HomeWorks.HW3Authorization.entity.User;
 
-public interface UserDao {
-    User createUser(String username);
+import java.sql.SQLException;
 
-    boolean addUser(User user);
+public interface UserDao {
+    User getByName(String username) throws SQLException;
+
+    boolean create(User user) throws SQLException;
 }
