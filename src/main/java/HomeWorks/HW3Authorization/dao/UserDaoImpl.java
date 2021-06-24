@@ -1,7 +1,7 @@
 package HomeWorks.HW3Authorization.dao;
 
 import HomeWorks.HW3Authorization.connection.ConnectionDBMySql;
-import HomeWorks.HW3Authorization.entity.User;
+import HomeWorks.HW3Authorization.dao.entity.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

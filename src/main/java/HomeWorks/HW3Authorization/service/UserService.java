@@ -1,6 +1,6 @@
 package HomeWorks.HW3Authorization.service;
 
-import HomeWorks.HW3Authorization.entity.User;
+import HomeWorks.HW3Authorization.dao.entity.User;
 
 import java.sql.SQLException;
 

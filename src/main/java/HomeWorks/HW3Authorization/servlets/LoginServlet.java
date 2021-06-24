@@ -1,6 +1,6 @@
 package HomeWorks.HW3Authorization.servlets;
 
-import HomeWorks.HW3Authorization.entity.User;
+import HomeWorks.HW3Authorization.dao.entity.User;
 import HomeWorks.HW3Authorization.service.UserService;
 import HomeWorks.HW3Authorization.service.UserServiceImpl;
 import lombok.SneakyThrows;

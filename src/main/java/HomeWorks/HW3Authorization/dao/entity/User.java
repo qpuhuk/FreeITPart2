@@ -1,4 +1,4 @@
-package HomeWorks.HW3Authorization.entity;
+package HomeWorks.HW3Authorization.dao.entity;
 
 import java.io.Serializable;
 
