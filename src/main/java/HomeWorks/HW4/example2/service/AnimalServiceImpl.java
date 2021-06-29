@@ -21,8 +21,12 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public AnimalEntity findByAge(int age) {
+    public AnimalDto findByAge(int age) {
         AnimalEntity animalEntity = dao.findByAge(age);
-        return animalEntity;
+        AnimalDto animalDto = new AnimalDto();
+        animalDto.setId(animalEntity.getId());
+        animalDto.setAge(animalEntity.getAge());
+        animalDto.setName(animalEntity.getName());
+        return animalDto;
     }
 }

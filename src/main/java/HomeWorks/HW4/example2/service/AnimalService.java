@@ -6,5 +6,5 @@ import HomeWorks.HW4.example2.dao.entities.AnimalEntity;
 public interface AnimalService {
     AnimalDto create(AnimalDto animalDto);
 
-    AnimalEntity findByAge(int age);
+    AnimalDto findByAge(int age);
 }

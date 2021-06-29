@@ -1,4 +1,4 @@
-package HomeWorks.HW4.example1;
+package HomeWorks.HW4;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -20,7 +20,7 @@ public class AnimalController {
     }
 
     @GetMapping
-    public ResponseEntity<AnimalEntity> find(int age) {
+    public ResponseEntity<AnimalDto> find(int age) {
         return new ResponseEntity<>(animalService.findByAge(age), HttpStatus.OK);
     }
 }
