@@ -18,10 +18,6 @@ public class RegistrationServlet extends HttpServlet {
         this.userService = new UserServiceImpl();
     }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-    }
-
     @SneakyThrows
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {

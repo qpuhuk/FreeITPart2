@@ -19,10 +19,6 @@ public class LoginServlet extends HttpServlet {
         this.userService = new UserServiceImpl();
     }
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-    }
-
     @SneakyThrows
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
