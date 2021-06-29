@@ -1,4 +1,4 @@
-package HomeWorks.HW2Servlets;
+package HomeWorks.hw2Servlets;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -34,10 +34,5 @@ public class ServletFour extends HttpServlet {
                 dispatcher.forward(request, response);
             }
         }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

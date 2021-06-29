@@ -7,7 +7,7 @@
 
     <servlet>
         <servlet-name>ServOne</servlet-name>
-        <servlet-class>HomeWorks.HW2Servlets.ServletOne</servlet-class>
+        <servlet-class>HomeWorks.hw2Servlets.ServletOne</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -17,7 +17,7 @@
 
     <servlet>
         <servlet-name>Five</servlet-name>
-        <servlet-class>HomeWorks.HW2Servlets.ServletFive</servlet-class>
+        <servlet-class>HomeWorks.hw2Servlets.ServletFive</servlet-class>
     </servlet>
 
     <servlet-mapping>

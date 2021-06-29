@@ -1,4 +1,4 @@
-package HomeWorks.HW2Servlets;
+package HomeWorks.hw2Servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,13 +10,9 @@ import java.io.PrintWriter;
 
 @WebServlet("/servPost")
 public class ServletThree extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         try (PrintWriter printWriter = response.getWriter()) {
             String name = request.getParameter("username");

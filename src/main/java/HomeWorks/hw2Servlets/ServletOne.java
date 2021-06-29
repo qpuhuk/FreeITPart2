@@ -1,4 +1,4 @@
-package HomeWorks.HW2Servlets;
+package HomeWorks.hw2Servlets;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
