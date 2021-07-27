@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
         this.userDao = userDao;
     }
 
-    public UserDto createDto(UserEntity userEntity) {
+    private UserDto createDto(UserEntity userEntity) {
         UserDto userDto = new UserDto();
         userDto.setId(userEntity.getId());
         userDto.setAge(userEntity.getAge());
